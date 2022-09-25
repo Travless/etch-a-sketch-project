@@ -1,5 +1,6 @@
-.box {
-    background-color: black;
+div {
+    border: 1px solid black;
+    background-color: white;
     width: 10px;
     height: 10px;
 }
