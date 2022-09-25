@@ -3,3 +3,19 @@
     width: 10px;
     height: 10px;
 }
+
+/* .box:hover {
+    background-color: yellow;
+} */
+
+/* .box:hover {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+} */
+
+.new-class {
+    background-color: yellow;
+    width: 10px;
+    height: 10px;
+}
