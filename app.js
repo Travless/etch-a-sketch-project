@@ -1,26 +1,35 @@
+let numOfSquares;
+
+function numGridInput () {
+    numOfSquares = Number(prompt('How many squares would you like on each side?'));
+    if (numOfSquares <= 36 && numOfSquares >= 10) {
+        return numOfSquares;
+    } else {
+        alert('Invalid input, please enter a number of at least 10 or higher.');
+    }
+}
+
 const boxContainer = document.querySelector('#box-container');
 let colContainer = document.createElement('div');
 let box;
-let boxArray = [];
-boxContainer.style.display = 'inline-flex';
+boxContainer.style.display = 'flex';
 
 
-function makeRows(colQuantity, rowQuantity) {
-    for(let i = 0; i < colQuantity; i++) {
+function makeGrid(numOfSquares) {
+    for(let i = 0; i < numOfSquares; i++) {
         colContainer = document.createElement('div');
         colContainer.classList.add('container');
         boxContainer.appendChild(colContainer);
-        for (let j = 0; j < rowQuantity; j++) {
+        for (let j = 0; j < numOfSquares; j++) {
             box = document.createElement('div');
             box.classList.add('single');
-            boxArray.push(box);
             colContainer.appendChild(box);
         };
     };
 };
 
 
-makeRows(36, 36);
+makeGrid(numOfSquares);
 
 const boxColor = document.getElementsByClassName('single');
 

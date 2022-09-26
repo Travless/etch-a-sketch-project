@@ -1,6 +1,17 @@
+/* body {
+    display: flexbox;
+    flex-direction: column;
+} */
+
 div {
     border: 1px solid black;
     background-color: white;
     width: 10px;
     height: 10px;
+}
+
+.page-container {
+    display: flexbox;
+    flex-direction: row;
+    position: relative;
 }
