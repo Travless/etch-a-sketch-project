@@ -1,28 +1,12 @@
-<<<<<<< HEAD
 .single {
-=======
-/* body {
-    display: flexbox;
-    flex-direction: column;
-} */
-
-div {
->>>>>>> e4f8781e6db9a3a469027d9f54472aa72e147d06
     border: 1px solid black;
     background-color: yellow;
     width: 10px;
     height: 10px;
 }
 
-<<<<<<< HEAD
 #page-container {
     display: flexbox;
     flex-direction: column;
     justify-content: space-around;
-=======
-.page-container {
-    display: flexbox;
-    flex-direction: row;
-    position: relative;
->>>>>>> e4f8781e6db9a3a469027d9f54472aa72e147d06
 }
