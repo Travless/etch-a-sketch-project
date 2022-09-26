@@ -1,67 +1,45 @@
+let box;
+let numOfSquares;
 const boxContainer = document.querySelector('#box-container');
-let rowContainer = document.createElement('div');
-// let row = document.createElement('div');
-let row;
-// rowHoverColor.classList.add('yellow-box');
-boxContainer.style.display = 'inline-flex';
+boxContainer.style.display = 'flex';
 
 
+function numGridInput () {
+    numOfSquares = Number(prompt('How many squares would you like on each side?'));
+    if (numOfSquares <= 36 && numOfSquares >= 10) {
+        return numOfSquares;
+    } else {
+        alert('Invalid input, please enter a number of at least 10 or higher.');
+        window.close();
+    }
+}
 
-
-function makeRows(colQuantity, rowQuantity) {
-    for(let i = 0; i < colQuantity; i++) {
-        rowContainer = document.createElement('div');
-        rowContainer.classList.add('container');
-        boxContainer.appendChild(rowContainer);
-        for (let j = 0; j < rowQuantity; j++) {
-            row = document.createElement('div');
-            row.classList.add('box');
-            // row.setAttribute('id', 'color-box');
-            rowContainer.appendChild(row);
-            console.log(row);
+function makeGrid(numOfSquares) {
+    for(let i = 0; i < numOfSquares; i++) {
+        let colContainer = document.createElement('div');
+        colContainer.classList.add('container');
+        boxContainer.appendChild(colContainer);
+        for (let j = 0; j < numOfSquares; j++) {
+            box = document.createElement('div');
+            box.classList.add('single');
+            colContainer.appendChild(box);
         };
     };
 };
 
-const newColor = document.getElementsByClassName('box');
+numGridInput();
+makeGrid(numOfSquares);
 
-// function changeColor() {
-//     for (let i = 0; i < newColor.length; i++) {
-//         document.addEventListener('mouseover', function(){
-//             newColor[i].style.backgroundColor = 'yellow';
-//             });
-//         };
-//     };
+const boxColor = document.getElementsByClassName('single');
+const refreshBtn = document.getElementById('refresh-btn');
 
-// function mouseOver() {
-//     newColor.style.backgroundColor = 'yellow';
-// }
+for (let i = 0; i < boxColor.length; i++) {
+    boxColor[i].addEventListener('mouseover', function(event) {
+        event.target.style.backgroundColor = 'black';
+    })
+}
 
-makeRows(10, 10);
-
-document.addEventListener('mouseover', function() {
-    const newColor = document.querySelectorAll('box');
-    console.log(newColor.style)
+refreshBtn.addEventListener('click', function(event) {
+    location.reload();
+    return false;
 })
-// changeColor();
-
-
-// document.addEventListener ('mouseover', () => {
-//     document.getElementsByClassName('.box').style.backgroundColor = 'yellow';
-// })
-
-
-
-// window.addEventListener('mouseover', mouseOver());
-
-// newRow = document.getElementsByClassName('box');
-// document.addEventListener('mouseover', function() {
-//     row.classList.remove('box');
-//     row.classList.add('new-class');
-// })
-
-// const rowHoverColor = document.getElementsByClassName('box');
-
-// document.addEventListener('mouseover', function() {
-//     row.classList.remove('box');
-// });
