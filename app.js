@@ -1,67 +1,31 @@
 const boxContainer = document.querySelector('#box-container');
-let rowContainer = document.createElement('div');
-// let row = document.createElement('div');
-let row;
-// rowHoverColor.classList.add('yellow-box');
+let colContainer = document.createElement('div');
+let box;
+let boxArray = [];
 boxContainer.style.display = 'inline-flex';
-
-
 
 
 function makeRows(colQuantity, rowQuantity) {
     for(let i = 0; i < colQuantity; i++) {
-        rowContainer = document.createElement('div');
-        rowContainer.classList.add('container');
-        boxContainer.appendChild(rowContainer);
+        colContainer = document.createElement('div');
+        colContainer.classList.add('container');
+        boxContainer.appendChild(colContainer);
         for (let j = 0; j < rowQuantity; j++) {
-            row = document.createElement('div');
-            row.classList.add('box');
-            // row.setAttribute('id', 'color-box');
-            rowContainer.appendChild(row);
-            console.log(row);
+            box = document.createElement('div');
+            box.classList.add('single');
+            boxArray.push(box);
+            colContainer.appendChild(box);
         };
     };
 };
 
-const newColor = document.getElementsByClassName('box');
 
-// function changeColor() {
-//     for (let i = 0; i < newColor.length; i++) {
-//         document.addEventListener('mouseover', function(){
-//             newColor[i].style.backgroundColor = 'yellow';
-//             });
-//         };
-//     };
+makeRows(36, 36);
 
-// function mouseOver() {
-//     newColor.style.backgroundColor = 'yellow';
-// }
+const boxColor = document.getElementsByClassName('single');
 
-makeRows(10, 10);
-
-document.addEventListener('mouseover', function() {
-    const newColor = document.querySelectorAll('box');
-    console.log(newColor.style)
-})
-// changeColor();
-
-
-// document.addEventListener ('mouseover', () => {
-//     document.getElementsByClassName('.box').style.backgroundColor = 'yellow';
-// })
-
-
-
-// window.addEventListener('mouseover', mouseOver());
-
-// newRow = document.getElementsByClassName('box');
-// document.addEventListener('mouseover', function() {
-//     row.classList.remove('box');
-//     row.classList.add('new-class');
-// })
-
-// const rowHoverColor = document.getElementsByClassName('box');
-
-// document.addEventListener('mouseover', function() {
-//     row.classList.remove('box');
-// });
+for (let i = 0; i < boxColor.length; i++) {
+    boxColor[i].addEventListener('mouseover', function(event) {
+        event.target.style.backgroundColor = 'black';
+    })
+}
